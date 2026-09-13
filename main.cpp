@@ -7,11 +7,12 @@ using namespace std;
 const int SIZE = 5;
 
 //Function prototype
-string* reverseArray(string*);
-void displayArray(const string*);
+string * reverseArray(string * );
+void displayArray(const string * );
 
 int main() {
-    string* strArray= new string[SIZE];
+    // create and populate a dynamic string array
+    string * strArray = new string[SIZE];
     *(strArray + 0) = "Janet";
     *(strArray + 1) = "Jeffe";
     *(strArray + 2) = "Jin";
@@ -19,9 +20,8 @@ int main() {
     *(strArray + 4) = "Junio";
 
     //Function call
-    
     cout << "Original array: ";
-    displayArray(origin);
+    displayArray(strArray);
 
     strArray = reverseArray(strArray);
     cout << "Reversed array: ";
@@ -34,31 +34,25 @@ int main() {
 }
 
 //Function definition
-string* reverseArray(string* arr)
-{
+string * reverseArray(string * arr) {
     // reverseArray() reverses the elements in the array
     // arguments: the dynamic string array
     // returns: a pointer to the modified array
-    
-    for (int i = 0; i < SIZE / 2; i++)
-    {
-        // swich the symetric 2 strings
-        string temp = *(rev + i);
-        *(rev + i) = 
+
+    for (int i = 0; i < SIZE / 2; i++) {
+        // swich the symetric 2 strings, modifies the array
+        string temp = * (arr + i);
+        *(arr + i) = * (arr + (SIZE - i - 1));
+        *(arr + (SIZE - i - 1)) = temp;
     }
-    
-        *(rev + i) = *(arr + (SIZE - i - 1));
-    
     return arr;
 }
 
-void displayArray(const string* arr)
-{
+void displayArray(const string * arr) {
     // displayArray() outputs its elements in the array
     // arguments: the dynamic string array
     // returns: none
-    for (int i = 0; i < SIZE; i++)
-    {
+    for (int i = 0; i < SIZE; i++) {
         cout << * (arr + i) << " ";
     }
     cout << endl;
