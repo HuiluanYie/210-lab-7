@@ -11,6 +11,7 @@ string* reverseArray(string*);
 void displayArray(string*);
 
 int main() {
+    string* 
 
     //Function call
 
@@ -23,12 +24,12 @@ string* reverseArray(string* arr)
     // reverseArray() reverses the elements in the array
     // arguments: the dynamic string array
     // returns: a pointer to the modified array
-    for (size_t i = 0; i < count; i++)
+    string* rev = new string[SIZE];
+    for (int i = 0; i < SIZE; i++)
     {
-        /* code */
+        *(rev + i) = *(arr + (SIZE - i - 1));
     }
-    
-    
+    return rev;
 }
 
 void displayArray(string* arr)
