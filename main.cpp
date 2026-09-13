@@ -8,12 +8,14 @@ const int SIZE = 5;
 
 //Function prototype
 string* reverseArray(string*);
-void displayArray(string*);
+void displayArray(const string*);
 
 int main() {
-    string* 
+    string origin[SIZE] = {"Janet", "Jeffe", "Jin", "Joe", "Junio"};
+    string* reversed = nullptr;
 
     //Function call
+    reversed = reverseArray(origin);
 
     return 0;
 }
@@ -32,10 +34,11 @@ string* reverseArray(string* arr)
     return rev;
 }
 
-void displayArray(string* arr)
+void displayArray(const string* arr)
 {
     // displayArray() outputs its elements in the array
     // arguments: the dynamic string array
     // returns: none
+    
 
 }
