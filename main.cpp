@@ -11,20 +11,24 @@ string* reverseArray(string*);
 void displayArray(const string*);
 
 int main() {
-    string origin[SIZE] = {"Janet", "Jeffe", "Jin", "Joe", "Junio"};
-    string* reversed = nullptr;
+    string* strArray= new string[SIZE];
+    *(strArray + 0) = "Janet";
+    *(strArray + 1) = "Jeffe";
+    *(strArray + 2) = "Jin";
+    *(strArray + 3) = "Joe";
+    *(strArray + 4) = "Junio";
 
     //Function call
-    reversed = reverseArray(origin);
-
+    
     cout << "Original array: ";
     displayArray(origin);
+
+    strArray = reverseArray(strArray);
     cout << "Reversed array: ";
-    displayArray(reversed);
+    displayArray(strArray);
 
     // Release the dynamically allocated memory.
-    delete[] origin;
-    delete[] reversed;
+    delete[] strArray;
 
     return 0;
 }
@@ -35,12 +39,17 @@ string* reverseArray(string* arr)
     // reverseArray() reverses the elements in the array
     // arguments: the dynamic string array
     // returns: a pointer to the modified array
-    string* rev = new string[SIZE];
-    for (int i = 0; i < SIZE; i++)
+    
+    for (int i = 0; i < SIZE / 2; i++)
     {
-        *(rev + i) = *(arr + (SIZE - i - 1));
+        // swich the symetric 2 strings
+        string temp = *(rev + i);
+        *(rev + i) = 
     }
-    return rev;
+    
+        *(rev + i) = *(arr + (SIZE - i - 1));
+    
+    return arr;
 }
 
 void displayArray(const string* arr)
