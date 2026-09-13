@@ -17,6 +17,15 @@ int main() {
     //Function call
     reversed = reverseArray(origin);
 
+    cout << "Original array: ";
+    displayArray(origin);
+    cout << "Reversed array: ";
+    displayArray(reversed);
+
+    // Release the dynamically allocated memory.
+    delete[] origin;
+    delete[] reversed;
+
     return 0;
 }
 
@@ -39,6 +48,9 @@ void displayArray(const string* arr)
     // displayArray() outputs its elements in the array
     // arguments: the dynamic string array
     // returns: none
-    
-
+    for (int i = 0; i < SIZE; i++)
+    {
+        cout << * (arr + i) << " ";
+    }
+    cout << endl;
 }
